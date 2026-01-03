@@ -1,0 +1,2 @@
+# nxsh.lol
+nxsh.lol
