@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReFramer - Self-Hosting Guide</title>
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-surface: #f7f7f7;
+            --color-border: #e6e6e6;
+            --color-text: #1a1a1a;
+            --color-text-secondary: #6b6b6b;
+            --color-accent: #000000;
+            --color-hover: #f0f0f0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #000000;
+                --color-surface: #111111;
+                --color-border: #2a2a2a;
+                --color-text: #ffffff;
+                --color-text-secondary: #9b9b9b;
+                --color-accent: #ffffff;
+                --color-hover: #1a1a1a;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 80px 24px 120px;
+        }
+
+        header {
+            margin-bottom: 64px;
+        }
+
+        .logo {
+            height: 24px;
+            margin-bottom: 48px;
+            color: var(--color-text);
+        }
+
+        .logo svg {
+            height: 100%;
+            width: auto;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--color-text-secondary);
+        }
+
+        ul, ol {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            color: var(--color-text-secondary);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: var(--color-surface);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        pre {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 16px;
+            overflow-x: auto;
+            margin-bottom: 16px;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .warning {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+        }
+
+        footer a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        footer a:hover {
+            color: var(--color-text);
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 48px 20px 80px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg width="1068" height="152" viewBox="0 0 1068 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M217.912 151.781V0.332031H284.082C317.218 0.332031 337.241 17.4081 337.241 42.7173C337.241 60.2 328.297 73.4136 313.05 79.5123C328.703 85.1026 333.074 96.4867 333.887 112.343L335.005 134.806C335.31 141.108 336.835 147.41 339.681 151.781H307.46C304.817 147.308 303.801 141.311 303.598 134.4L302.886 117.019C302.174 98.4179 294.043 93.7423 279.406 93.7423H249.015V151.781H217.912ZM280.728 69.5512C295.364 69.5512 305.325 61.5214 305.325 47.088C305.325 33.1629 295.263 25.6412 279.813 25.6412H249.015V69.5512H280.728Z" fill="currentColor"/>
+                    <path d="M419.283 151.781V0.332031H521.333V27.1659H450.589V64.3674H516.251V90.3881H450.589V151.781H419.283Z" fill="currentColor"/>
+                    <path d="M529.098 151.781V44.4459H557.964V62.7417H558.269C562.233 49.7313 570.365 43.7344 584.493 43.7344H598.927V68.9419H580.428C568.129 68.9419 559.082 77.5816 559.082 93.6413V151.781H529.098Z" fill="currentColor"/>
+                    <path d="M640.269 151.78C617.806 151.78 603.779 139.685 603.779 120.372C603.779 99.1288 619.636 91.2006 640.473 87.8464L663.241 84.1872C670.152 83.0691 672.185 80.1215 672.185 76.0557C672.185 68.1276 665.477 62.6388 654.601 62.6388C643.42 62.6388 636.102 68.3308 635.39 76.564H607.235C608.557 54.5073 626.141 40.3789 655.516 40.3789C684.891 40.3789 701.764 54.7106 701.764 80.4264L701.662 151.78H672.389L672.49 134.806H672.084C667.205 144.055 656.634 151.78 640.269 151.78ZM648.706 130.943C662.834 130.943 672.389 121.897 672.389 109.395V100.653L647.486 105.024C638.338 106.752 632.341 111.123 632.341 118.644C632.341 126.268 638.338 130.943 648.706 130.943Z" fill="currentColor"/>
+                    <path d="M709.527 151.689V44.3533H738.394V63.6656H738.699C744.289 49.2322 757.401 42.1172 771.022 42.1172C785.353 42.1172 797.347 49.9437 801.921 63.0557C807.512 50.0454 820.827 42.1172 836.277 42.1172C856.91 42.1172 872.258 56.0423 872.258 80.5384V151.689H842.375V86.0271C842.375 73.1184 834.345 66.8165 824.181 66.8165C812.594 66.8165 805.377 75.1513 805.377 87.0436V151.689H776.51V85.214C776.51 74.0332 769.192 66.8165 758.723 66.8165C748.05 66.8165 739.512 74.6431 739.512 88.3649V151.689H709.527Z" fill="currentColor"/>
+                    <path d="M936.23 151.781C902.078 151.781 880.021 128.199 880.021 95.7752C880.021 63.046 902.891 39.5664 935.112 39.5664C968.146 39.5664 990.406 62.5378 990.406 95.1654V103.195H909.193C909.803 118.95 919.967 129.318 937.043 129.318C949.851 129.318 958.795 123.829 961.743 115.596H989.187C984.917 136.941 963.267 151.781 936.23 151.781ZM909.498 84.0862H962.149C960.32 70.5676 950.359 62.3345 935.722 62.3345C921.085 62.3345 911.328 70.5676 909.498 84.0862Z" fill="currentColor"/>
+                    <path d="M998.172 151.781V44.4459H1027.04V62.7417H1027.34C1031.31 49.7313 1039.44 43.7344 1053.57 43.7344H1068V68.9419H1049.5C1037.2 68.9419 1028.16 77.5816 1028.16 93.6413V151.781H998.172Z" fill="currentColor"/>
+                    <path d="M394.286 39.5664C400.242 39.5664 405.847 40.3133 411.035 41.7285V66.751C406.726 63.8876 401.252 62.335 394.896 62.335C380.26 62.335 370.501 70.5683 368.672 84.0869H411.035V103.195H368.367C368.977 118.95 379.142 129.318 396.218 129.318C402.014 129.318 407.019 128.193 411.035 126.199V150.03C406.111 151.173 400.868 151.781 395.404 151.781C361.252 151.781 339.195 128.2 339.195 95.7754C339.195 63.0464 362.065 39.5665 394.286 39.5664Z" fill="currentColor"/>
+                    <path d="M0 0H152V76H76L0 0ZM0 76H76L152 152H0V76Z" fill="currentColor"/>
+                </svg>
+            </div>
+            <h1>Self-Hosting Guide</h1>
+            <p class="subtitle">How to host your exported Framer site</p>
+        </header>
+
+        <main>
+            <div class="warning">
+                <strong>⚠️ Important:</strong> This export requires internet connection to load Framer's React bundles from their CDN. The custom code injector waits for React hydration before executing your custom code.
+            </div>
+
+            <h2>📁 What's Included</h2>
+            <ul>
+                <li><strong>HTML files:</strong> Pages with Framer React runtime intact</li>
+                <li><strong>assets/:</strong> Downloaded images, custom CSS, custom JS, and fonts</li>
+                <li><strong>custom-code/:</strong> Extracted custom code reference (JSON format)</li>
+            </ul>
+
+            <h2>🚀 How to Host</h2>
+
+            <h3>Option 1: Open Locally</h3>
+            <p>Simply open <code>index.html</code> in your browser. Requires internet connection for Framer bundles.</p>
+
+            <h3>Option 2: Run a Local Server</h3>
+            <pre><code># Using Node.js
+npx serve .
+
+# Using Python
+python -m http.server 8000</code></pre>
+            <p>Then visit <code>http://localhost:8000</code></p>
+
+            <h3>Option 3: Deploy to Production</h3>
+            <p>Upload to any static hosting service that allows external scripts:</p>
+            <ul>
+                <li>Netlify</li>
+                <li>Vercel</li>
+                <li>GitHub Pages</li>
+                <li>Cloudflare Pages</li>
+            </ul>
+
+            <h2>✅ What Works</h2>
+            <ul>
+                <li>Framer React runtime (interactive components)</li>
+                <li>CMS content (embedded)</li>
+                <li>Code components (require Framer runtime)</li>
+                <li>Code overrides (require Framer runtime)</li>
+                <li>Custom page code (injected after hydration)</li>
+                <li>Form submissions (custom handlers)</li>
+                <li>All downloaded assets</li>
+            </ul>
+
+            <h2>🔧 Technical Details</h2>
+            <p>The export keeps Framer's React bundles as external references because:</p>
+            <ol>
+                <li>Custom code components are React components that need the Framer runtime</li>
+                <li>Code overrides are HOCs that wrap Framer components</li>
+                <li>Framer uses SSR + hydration architecture</li>
+                <li>Custom code needs to run AFTER React hydration completes</li>
+            </ol>
+            <p>The custom code injector waits for:</p>
+            <ul>
+                <li><code>window.__FRAMER_HYDRATED__</code> flag, OR</li>
+                <li><code>data-framer-hydration-id</code> attribute + document ready</li>
+            </ul>
+
+            <h2>📝 Customization</h2>
+            <p>Custom code is injected via the <code>#framer-custom-code-injector</code> script at the bottom of each HTML file.</p>
+            <p>See <code>custom-code/*.json</code> for reference of extracted code.</p>
+
+            <h2>⚠️ Limitations</h2>
+            <ul>
+                <li><strong>Requires internet</strong> to load Framer React bundles (~300KB)</li>
+                <li><strong>Not fully offline</strong> (Framer runtime is CDN-hosted)</li>
+                <li><strong>CMS is static</strong> (no live updates)</li>
+            </ul>
+
+            <h2>🎯 For Fully Offline Export</h2>
+            <p>If you need a fully offline version:</p>
+            <ol>
+                <li>You'll need to rewrite custom code components as vanilla JS</li>
+                <li>Remove Framer React dependencies</li>
+                <li>Rebuild interactive elements manually</li>
+            </ol>
+            <p>This is complex and loses Framer's dynamic features.</p>
+        </main>
+
+        <footer>
+            <p>Made by <a href="https://julpav.com" target="_blank" rel="noopener noreferrer">Julian</a></p>
+        </footer>
+    </div>
+</body>
+</html>
