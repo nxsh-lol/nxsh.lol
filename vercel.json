@@ -1,9 +1,5 @@
 {
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1.html",
-      "check": true
-    }
+  "rewrites": [
+    { "source": "/marca", "destination": "/marca.html" }
   ]
 }
