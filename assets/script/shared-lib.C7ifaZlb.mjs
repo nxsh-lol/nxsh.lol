@@ -1,0 +1,2 @@
+import{t as e}from"./rolldown-runtime.CSVa3Jaz.mjs";function t(e,t){return{description:`Hi, I’m Mateo — a Design Engineer at Typeform. This site showcases my work in frontend development, UX design, and scalable UI systems, along with my resume and background.`,robots:`max-image-preview:large`,socialImage:`https://framerusercontent.com/assets/dRdxxWCvQYhlWZ5q2w4pRhLULjA.png`,title:`Mateo - Resume & CV Template`}}var n=e((()=>{}));export{t as n,n as t};
+//# sourceMappingURL=shared-lib.C7ifaZlb.mjs.map
