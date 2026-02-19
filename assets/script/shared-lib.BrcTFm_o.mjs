@@ -1,2 +1,0 @@
-import{t as e}from"./rolldown-runtime.CSVa3Jaz.mjs";function t(e,t){return{description:`Estudiante de ingeniería a tiempo completo, diseñador freelance y desarrollador en Roblox.`,favicon:`https://framerusercontent.com/assets/ptCDSsshjHIbTi5vbWWYw7zRUpA.svg`,robots:`max-image-preview:large`,socialImage:`https://framerusercontent.com/assets/lc3Xae1MTIpHrwHiyIE2mbhtsug.png`,title:`Nash (Andrés F.)`}}var n=e((()=>{}));export{t as n,n as t};
-//# sourceMappingURL=shared-lib.BrcTFm_o.mjs.map
